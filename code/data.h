@@ -14,9 +14,15 @@ const int NNZ = 16313034;
 const int N = 7733822;*/
 
 /* delaunay_n22 */
-const char path_csr_rows[] = "../../data/delaunay_n22/CSR_ROWS.txt";
+/*const char path_csr_rows[] = "../../data/delaunay_n22/CSR_ROWS.txt";
 const char path_csr_cols[] = "../../data/delaunay_n22/CSR_COLS.txt";
 const int NNZ = 25165738;
-const int N = 4194304;
+const int N = 4194304;*/
+
+/* delaunay_n23 */
+const char path_csr_rows[] = "../../data/delaunay_n23/CSR_ROWS.txt";
+const char path_csr_cols[] = "../../data/delaunay_n23/CSR_COLS.txt";
+const int NNZ = 50331568;
+const int N = 8388608;
 
 #endif

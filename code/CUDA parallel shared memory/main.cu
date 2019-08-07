@@ -4,7 +4,7 @@
 #include <sys/time.h>
 #include "../data.h"
 
-#define MAX_NNZ_PER_LINE 6
+#define MAX_NNZ_PER_LINE 64
 
 inline cudaError_t checkCuda(cudaError_t result){
   if (result != cudaSuccess) {
