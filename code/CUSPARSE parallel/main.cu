@@ -1,14 +1,6 @@
-/* Dimitris Antoniadis                                      *
-*  20/06/2019                                               *
-*  Given two sparse matrices A, B with size N*N, perform    *
-*  operation C = A*B using cuSPARSE.                        *
+/*  $ nvcc main.cu tools.cu -lcusparse -lcudart -o test      *
 *                                                           *
-*  1. Run script.m                                          *
-*  2. Mark down N, nnzA, nnzB, nnzC                         *
-*                                                           *
-*  $ nvcc main.cu tools.cu -lcusparse -lcudart -o test      *
-*                                                           *
-*  $ ./test [N] [nnzA] [nnzB] [nnzM]                        */
+*  $ ./test [N] [nnzA]                                      */
 
 #include <stdio.h>         // printf
 #include <stdlib.h>        // EXIT_FAILURE
@@ -39,10 +31,7 @@
 }
 
 int main(int argc, char const *argv[]) {
-  if( argc != 4){
-    printf("Please Provide 3 arguments N, nnzA, nnzM\n");
-    exit(-5);
-  }
+
   /* Initialize Host Memory */
   int N = atoi(argv[1]);      // Matrix size N*N
   int nnzA = atoi(argv[2]);  // A number of non zero elements
@@ -51,7 +40,7 @@ int main(int argc, char const *argv[]) {
   int *hA_cols = (int*)malloc(nnzA*sizeof(int));
   float *hA_values = (float*)malloc(nnzA*sizeof(float));
 
-  readSparseMatrixCOO( hA_rows, hA_cols, hA_values, nnzA, "../test/MatrixACOO-R-C-V.txt");
+  readSparseMatrixCOO( hA_rows, hA_cols, hA_values, nnzA, "./MatrixACOO-R-C-V.txt");
   //printf("Matrix A: COO Format\n");
   //printSparseMatrixCOO( hA_rows, hA_cols, hA_values, nnzA);
   //printf("\n");
@@ -226,7 +215,7 @@ int main(int argc, char const *argv[]) {
   */
 
   /* Test Results */
-  int nnzM = atoi(argv[3]);
+  /*int nnzM = atoi(argv[3]);
   int *Matlab_rows = (int*)malloc(nnzM*sizeof(int));
   int *Matlab_cols = (int*)malloc(nnzM*sizeof(int));
   float *Matlab_values = (float*)malloc(nnzM*sizeof(float));
@@ -234,7 +223,7 @@ int main(int argc, char const *argv[]) {
 
   int pass = test( hC_rows, hC_cols, hC_values, nnzC, Matlab_rows, Matlab_cols, Matlab_values, nnzM);
   printf("Multiplication TEST %s\n",(pass) ? "PASSed" : "FAILed");
-  assert(pass);
+  assert(pass);*/
 
   /* print execution time */
   printf("Sequential wall clock time: %f sec\n", time);

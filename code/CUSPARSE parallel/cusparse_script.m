@@ -1,6 +1,8 @@
 clear 
 clc
 
+cd ../../data/auto/
+
 load auto.mat
 
 A = Problem.A > 0;
@@ -40,6 +42,7 @@ for i = 1:length(rowA)
 end
 
 fclose(fid);
+fprintf("MatrixACOO-R-C-V.txt DONE\n");
 
 
 %% Write Sparse Matrix C to COO format
