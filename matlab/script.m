@@ -4,16 +4,24 @@ clc
 
 %% Load Matrix
 % Matrix delaunay_n22
-cd '~/Desktop/Parallel Triangle Counting/data/delaunay_n22'
-load delaunay_n22.mat
+% cd '~/Desktop/Parallel Triangle Counting/data/delaunay_n22'
+% load delaunay_n22.mat
 
 % Matrix auto
 % cd '~/Desktop/Parallel Triangle Counting/data/auto'
 % load auto.mat
 
 % Matrix great britain
-% cd '~/Desktop/Parallel Triangle Counting/data/great_britain'
-% load great-britain_osm.mat
+cd '~/Desktop/Parallel Triangle Counting/data/great_britain'
+load great-britain_osm.mat
+
+% Matrix delaunay_n23
+%cd '~/Desktop/Parallel Triangle Counting/data/delaunay_n23'
+%load delaunay_n23.mat
+
+
+
+
 
 % keep only adjacency matrix (logical values)
 A = Problem.A > 0; 
@@ -38,9 +46,11 @@ clearvars row col
 COO = sortrows(COO, 1);
 COO_base_0 = COO-1;
 nnz = length(COO_base_0(:,1));
+sparsity = nnz/(length(A)^2);
 fprintf("COO format has been completed\n");
 fprintf("Number of Non-Zero elements: %d\n", nnz);
 fprintf("Length A: %d\n", length(A));
+fprintf("Sparsity %f\n", sparsity);
 %% Write COO Format to file
 % fileID = fopen("./COO_format.txt", 'w');
 % for i = 1:nnz
@@ -70,20 +80,20 @@ fprintf("CSR rows pointer has been completed\n");
 % fprintf("\n");
 clearvars i temp 
 %% Write CSR to file
-% fprintf("Printing CSR_ROWS.txt\n");
-% fileID = fopen("./CSR_ROWS.txt", 'w');
-% for i = 1:length(CSR_rows_base_0)
-%    fprintf( fileID, "%d\n", CSR_rows_base_0(i));
-% end
-% fclose(fileID);
-% 
-% fprintf("CSR_ROWS.txt printed\n")
-% fprintf("Printing CSR_COLS.txt\n");
-% fileID = fopen("./CSR_COLS.txt", 'w');
-% for i = 1:length(COO_base_0(:,2))
-%    fprintf( fileID, "%d\n", COO_base_0(i,2));
-% end
-% fclose(fileID);
-% fprintf("CSR_COLS.txt printed\n")
-% fprintf("CSR format printed to files\n");
-% 
+fprintf("Printing CSR_ROWS.txt\n");
+fileID = fopen("./CSR_ROWS.txt", 'w');
+for i = 1:length(CSR_rows_base_0)
+   fprintf( fileID, "%d\n", CSR_rows_base_0(i));
+end
+fclose(fileID);
+
+fprintf("CSR_ROWS.txt printed\n")
+fprintf("Printing CSR_COLS.txt\n");
+fileID = fopen("./CSR_COLS.txt", 'w');
+for i = 1:length(COO_base_0(:,2))
+   fprintf( fileID, "%d\n", COO_base_0(i,2));
+end
+fclose(fileID);
+fprintf("CSR_COLS.txt printed\n")
+fprintf("CSR format printed to files\n");
+
