@@ -12,14 +12,36 @@ clc
 % load auto.mat
 
 % Matrix great britain
-cd '~/Desktop/Parallel Triangle Counting/data/great_britain'
-load great-britain_osm.mat
+% cd '~/Desktop/Parallel Triangle Counting/data/great_britain'
+% load great-britain_osm.mat
 
 % Matrix delaunay_n23
 %cd '~/Desktop/Parallel Triangle Counting/data/delaunay_n23'
 %load delaunay_n23.mat
 
+% % fe_tooth
+% cd '~/Desktop/Parallel Triangle Counting/data/fe_tooth'
+% load fe_tooth.mat
 
+% % fe_tooth
+% cd '~/Desktop/Parallel Triangle Counting/data/144'
+% load 144.mat
+
+% citationCiteseer
+% cd '~/Desktop/Parallel Triangle Counting/data/citationCiteseer'
+% load citationCiteseer.mat
+
+% road_central
+% cd '~/Desktop/Parallel Triangle Counting/data/road_central'
+% load road_central.mat
+
+% germany_osm
+% cd '~/Desktop/Parallel Triangle Counting/data/germany_osm'
+% load germany_osm.mat
+
+% road_usa
+cd '~/Desktop/Parallel Triangle Counting/data/road_usa'
+load road_usa.mat
 
 
 
