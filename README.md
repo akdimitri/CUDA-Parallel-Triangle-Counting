@@ -40,6 +40,9 @@ The efficiency of the algorithms(execution time) was compared to the MATLAB exec
 
 **Results**
 
+The experiments were conducted on a **GeForce GTX 650
+Ti** GPU and on a **Intel® CoreTM i5-4690K** CPU. 
+
 The following graph shows the comparison of the 4 implemented algorithms and the algorithm executed by MATLAB for graph [auto](https://sparse.tamu.edu/DIMACS10/auto). On y axis is time in seconds and on x axis is the name of the algorithm.
 
 ![Algorithms Comparison](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/images/auto.png)
