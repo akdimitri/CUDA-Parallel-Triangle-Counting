@@ -14,6 +14,12 @@ Semester: 8th
 
 **Description**: this repository includes the source code and other files of the fourth (4th) Assignment. Aim of the assigment is to implement a program that counts the number of the triangles of a simple undirected graph G(V,E) using CUDA programming language. This repository includes three (3) implementations in CUDA fulfiling the above objective. Furthermore, a sequential algorithm is also included in this repository.
 
+Algorithms:
+ * [CUSPARSE](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/code/CUSPARSE%20parallel/main.cu)
+ * [CUDA](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/code/CUDA%20parallel/main.cu)
+ * [CUDA shared memory](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/code/CUDA%20parallel%20shared%20memory/main.cu)
+ * [Sequential](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/code/sequential/main.c)
+
 To test the efficiency of the implemented programs the following Graphs were examined:
 
   * [auto](https://sparse.tamu.edu/DIMACS10/auto)
