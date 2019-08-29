@@ -28,15 +28,21 @@ To test the efficiency of the implemented programs the following Graphs were exa
   * [road_usa](https://sparse.tamu.edu/DIMACS10/road_usa)
   
 The efficiency of the algorithms(execution time) was compared to the MATLAB execution time of the following algorithm.
-
+![Triangle Counting Algorithm](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/images/algorithm.png)
 
 ---
 
 **Results**
 
-The following graph shows the comparison of the 4 implemented algorithms and the algorithm executed by MATLAB for graph [auto](https://sparse.tamu.edu/DIMACS10/auto). On y axis is time in seconds.
+The following graph shows the comparison of the 4 implemented algorithms and the algorithm executed by MATLAB for graph [auto](https://sparse.tamu.edu/DIMACS10/auto). On y axis is time in seconds and on x axis is the name of the algorithm.
 
 ![Algorithms Comparison](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/images/auto.png)
+
+The following graphs show the speed up [_CUDA_](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/code/CUDA%20parallel/main.cu) algorithm achieved over _MATLAB_. On the y axis is the speed up (times faster), on the x axis is the name of the graph.
+
+![CUDA/MATLAB Comparison speed up](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/images/speed_up.png)
+
+![CUDA/MATLAB Comparison speed up](https://github.com/akdimitri/CUDA-Parallel-Triangle-Counting/blob/master/images/speed_up_2.png)
 
 
 
